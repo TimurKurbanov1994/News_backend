@@ -5,20 +5,19 @@ ORM: TypeORM
 
 ## Описание
 
-Реализован CRUD для сущностей User и Tags.
+Реализован CRUD для сущностей User, Tags  и FeedBack.
 1) Пароли не хранятся в открытом виде
 2) Реализована валидация полей на api запросы с кодами ответов и сообщениями об ошибке в теле ответа.
-3) JWT bearer token авторизации живет 30 минут
-4) Реализован endpoint для обновления токена
+3) JWT bearer token
+4) Модуль AWS для взаимодействия с сервером JS
 5) Использованы DTO
-6) Добавлена генерация swagger документации для api методов.
 
 
 ### **News:**
 
 | field         | type        |
 | ------------- |:-----------:|
-| id            | int         |
+| id            | uuid        |
 | title         | string(100) |
 | status        | string(100) | 
 | text          | string(30)  |
@@ -30,10 +29,19 @@ ORM: TypeORM
 
 | field         | type        |
 | ------------- |:-----------:|
-| id            | int         |
+| id            | uuid        |
 | email         | string(100) |
 | password      | string(100) | 
 | name          | string(30)  |
+
+### **Feedback:**
+
+| field         | type        |
+| ------------- |:-----------:|
+| id            | uuid        |
+| email         | string(100) |
+| text          | string(100) | 
+
 
 ## Список API endpoint
 
