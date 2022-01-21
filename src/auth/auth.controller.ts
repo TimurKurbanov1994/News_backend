@@ -19,12 +19,13 @@ export class AuthController {
   public async login(@Body() user): Promise<UserLoginDto & { token: string }> {
     return await this.authServices.login(user);
   }
-  @UseGuards(JwtAuthGuard)
+
   @Get('users')
   getAll() {
     return this.authServices.getAllUsers();
   }
-
+  
+  @UseGuards(JwtAuthGuard)
   @Patch('/reset')
   async resetPassword(@Body() user: ResetPasswordDto): Promise<any> {
     return await this.authServices.resetPassword(user);
